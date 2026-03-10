@@ -10,14 +10,9 @@ fun main() {
         var score: Int
         while (true) {
             print(prompt)
-            val input = readlnOrNull()
-            if (input.isNullOrBlank()) {
-                println("Input tidak boleh kosong! Harap masukkan angka bulat antara 0 - 100.")
-                continue
-            }
-            val number = input.toIntOrNull()
-            if (number != null && number in 0..100) {
-                score = number
+            val input = readlnOrNull()?.toIntOrNull()
+            if (input != null && input in 0..100) {
+                score = input
                 break
             }
             println("Input tidak valid! Harap masukkan angka bulat antara 0 - 100.")
@@ -43,19 +38,19 @@ fun main() {
             grade = "A"
             keterangan = "Sangat Baik"
         }
-        in 75..84 -> {
+        in 70..84 -> {
             grade = "B"
             keterangan = "Baik"
         }
-        in 65..74 -> {
+        in 60..69 -> {
             grade = "C"
             keterangan = "Cukup"
         }
-        in 55..64 -> {
+        in 50..59 -> {
             grade = "D"
             keterangan = "Kurang"
         }
-        in 0..54 -> {
+        in 0..49 -> {
             grade = "E"
             keterangan = "Sangat Kurang"
         }
@@ -71,7 +66,7 @@ fun main() {
     println("Nilai UAS   : $uas (Bobot 40%)")
     println("Nilai Tugas : $tugas (Bobot 30%)")
     println("-------------------------------")
-    println("Nilai Akhir : ${String.format("%.2f", nilaiAkhir)}")
+    println("Nilai Akhir : $nilaiAkhir")
     println("Grade       : $grade")
     println("Keterangan  : $keterangan")
     println("Status      : $status")
