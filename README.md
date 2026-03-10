@@ -1,2 +1,2 @@
-## Nama: Muhammad Ridho Fahru Rozy
-## NIM: F1D022076
+## Nama: [Muhammad Ridho Fahru Rozy]
+## NIM : [F1D022076]
