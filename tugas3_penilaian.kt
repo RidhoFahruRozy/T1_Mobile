@@ -5,7 +5,6 @@ fun main() {
     print("Masukkan Nama Mahasiswa: ")
     val nama = readlnOrNull() ?: ""
 
-    // Fungsi bantuan untuk memastikan input berupa angka dan berada di range 0-100
     fun getValidScore(prompt: String): Int {
         var score: Int
         while (true) {
@@ -24,10 +23,8 @@ fun main() {
     val uas = getValidScore("Masukkan Nilai UAS (0-100): ")
     val tugas = getValidScore("Masukkan Nilai Tugas (0-100): ")
 
-    // 1. Menghitung nilai akhir dengan bobot sesuai instruksi
     val nilaiAkhir = (uts * 0.3) + (uas * 0.4) + (tugas * 0.3)
 
-    // 2. Konversi nilai akhir ke huruf dan keterangan menggunakan when
     val nilaiBulat = nilaiAkhir.toInt()
 
     var grade = ""
@@ -56,10 +53,8 @@ fun main() {
         }
     }
 
-    // 3. Menentukan status kelulusan (Lulus jika nilai >= 60)
     val status = if (nilaiAkhir >= 60) "LULUS" else "TIDAK LULUS"
 
-    // Menampilkan Output sesuai dengan contoh yang diharapkan
     println("\n===== HASIL PENILAIAN =====")
     println("Nama        : $nama")
     println("Nilai UTS   : $uts (Bobot 30%)")
